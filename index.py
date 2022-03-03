@@ -1,8 +1,8 @@
 import discord
 import time
 import asyncio
-import mysql.connector
-import pickle
+#import mysql.connector
+#import pickle
 #import yourmother
 
 
