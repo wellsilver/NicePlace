@@ -19,6 +19,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print("The bot is ready!")
+    #get time it took to start
     preptime2 = int(time.time())
     preptimef = preptime2 - preptime
     print(f"Bot took {preptimef} seconds to start")
@@ -34,38 +35,7 @@ async def on_message(i):
         if content.startswith('pwease'):
             # finally commands, but crappy implement
 
-            if content.startswith('hello', 7):
-              await i.reply("World")
-
-            #if content.startswith('register', 7):
-              #await i.reply("Registering")
-              #usr = i.author
-              #outfile = open(savea,'wb')
-              #pickle.dump(usr,outfile)
-              #await i.channel.send("Registered")
-
-            if content.startswith('rich', 7):
-              await i.reply("Imagine being rich")
-
-            if content.startswith('epoch', 7):
-              await i.reply(f"epoch is: {int(time.time())}")
-              await i.channel.send(f"The epoch when server started was {preptime} so it has been online for {int(time.time()) - preptime} seconds")
-
-            if content.startswith('bewilderment', 7):
-              await i.reply("After some careful consideration, I find myself also confused")
-
-            if content.startswith('bussy', 7):
-              #await i.channel.send(file=discord.File(r'lol.mp4'))
-              #lol.mp4 doesnt exist in src
-            
-            if content.startswith('help', 7):
-              await i.reply("Help!")
-              await i.channel.send("help, commands")
-              await i.channel.send("rich, become rich")
-              await i.channel.send("register, register for the communist party")
-
-        if content.startswith('nice place is dumb'):
-            await i.reply("no im not")
-        if content.startswith('im so happy'):
-            await i.reply("Now I wish I had emotions")
+            if content.startswith('text', 7):
+              sendasap=content[text.find("@")+1:].split()[0]
+              i.channel.send(sendasap)
 client.run(key)
